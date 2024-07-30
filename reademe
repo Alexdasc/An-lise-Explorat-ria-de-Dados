@@ -1,0 +1,70 @@
+# README
+
+## Análise Exploratória de Dados de URLs
+
+Este projeto realiza uma análise exploratória de dados a partir de URLs, abordando o tratamento de dados faltantes, estatísticas descritivas e criação de diversas visualizações. As visualizações são geradas utilizando as bibliotecas pandas, seaborn e matplotlib, com a opção de salvar os gráficos criados.
+
+### Requisitos
+
+Para executar este projeto, você precisará das seguintes bibliotecas:
+
+- pandas
+- matplotlib
+- seaborn
+- requests
+
+Você pode instalá-las utilizando o comando:
+
+```bash
+pip install pandas matplotlib seaborn requests
+```
+
+### Funcionalidades
+
+1. **Carregamento de Dados**
+   - A função `carregar_dados(url, tipo_arquivo='CSV')` é responsável por carregar dados de um URL. Caso o URL fornecido seja de um arquivo do Google Drive, o download é feito de forma adequada para leitura com o pandas. Atualmente, o tipo de arquivo suportado é CSV.
+
+2. **Tratamento de Dados Faltantes**
+   - A função `tratar_dados_faltantes(df)` exibe os dados faltantes e remove as linhas com valores faltantes do DataFrame.
+
+3. **Análise Exploratória de Dados**
+   - A função `analise_exploratoria(df, save_fig=False)` executa a análise exploratória, que inclui:
+     - Exibição das primeiras linhas do DataFrame.
+     - Informações sobre o DataFrame.
+     - Estatísticas descritivas das variáveis numéricas.
+     - Diversas visualizações, incluindo histograma, gráfico de pizza, gráfico de linha, gráfico de dispersão, boxplot e matriz de correlação.
+
+4. **Visualizações**
+   - As seguintes funções são usadas para criar visualizações:
+     - `plot_histograma(df, save_fig)`
+     - `plot_grafico_de_pizza(df, save_fig)`
+     - `plot_grafico_de_linha(df, save_fig)`
+     - `plot_grafico_de_dispersao(df, save_fig)`
+     - `plot_boxplot(df, save_fig)`
+     - `identificacao_correlacoes(df, save_fig)`
+
+5. **Análise Especialista**
+   - A função `analise_especialista()` é um espaço para adicionar conclusões e insights personalizados após a análise exploratória.
+
+### Uso
+
+Para utilizar este projeto, você deve fornecer uma lista de URLs de arquivos de dados no formato CSV. Exemplos de URLs podem ser encontrados na seção "URLs dos arquivos de dados" no script principal.
+
+Chame a função `main(urls, save_fig=False)` para iniciar a análise exploratória. A opção `save_fig` determina se os gráficos serão salvos como arquivos de imagem. Defina `save_fig=True` para salvar os gráficos gerados.
+
+### Exemplo de Execução
+
+```python
+urls = [
+    "https://drive.google.com/file/d/1akDw1KGgQAWeCFLORbHauLNTjNRbzT7-/view?usp=sharing"
+    # Adicione mais URLs aqui...
+]
+
+main(urls, save_fig=True)
+```
+
+### Considerações Finais
+
+Este projeto é uma ferramenta útil para explorar e visualizar dados de forma rápida e eficiente. As análises e visualizações ajudam a identificar padrões, tendências e relações nos dados. Sinta-se à vontade para expandir o projeto, adicionando mais funcionalidades e personalizando a análise de acordo com suas necessidades.
+
+**Nota:** Certifique-se de que os dados sejam devidamente tratados antes de realizar análises conclusivas.
